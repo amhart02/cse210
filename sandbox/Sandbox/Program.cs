@@ -5,35 +5,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
+        Console.WriteLine("Bonjour Tout Le Monde.");
 
-        int userAge = -1;
+        Circle myCircle = new Circle(10);
+        Console.WriteLine($"{myCircle.GetArea()}");
 
-        while (userAge < 0 || userAge > 120 )
-        {
-            Console.WriteLine("Please input your age (0-120): ");
-            userAge = int.Parse(Console.ReadLine());
-        }
-
-        int userAge2 = 3249724;
-
-        do
-        {
-            Console.WriteLine("Please input your age (0-120): ");
-            userAge2 = int.Parse(Console.ReadLine());
-        } while (userAge2 < 0 || userAge2 > 120 );
-
-        List<int> myNumbers = new List<int> { 1, 2, 3, 4, 5};
-        List<string> myNames = new List<string> {"Betty"};
-
-        myNames.Add("Bob");
-        myNumbers.Add(6);
-
-        foreach (string name in myNames)
-        {
-            Console.WriteLine(name);
-        }
-
-        //area.ToString("F3")
+        Circle unitCircle = new Circle(1);
+        Console.WriteLine($"{unitCircle.GetCircumference()}");
+        Console.WriteLine($"{unitCircle.GetDiameter()}");
     }
 }
