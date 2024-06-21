@@ -6,7 +6,7 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
-            Entry.DisplayEntry();
+            Console.WriteLine(entry);
         }
     }
 }
