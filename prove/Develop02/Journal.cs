@@ -9,10 +9,7 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
-            Console.WriteLine(entry._date);
-            Console.WriteLine(entry._prompt);
-            Console.WriteLine(entry._response);
-            Console.WriteLine();
+            entry.Display();
         }
     }
     public static void SaveToFile(Journal journal)

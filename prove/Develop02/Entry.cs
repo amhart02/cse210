@@ -7,7 +7,8 @@ public class Entry
     public void Display()
     {
         Console.WriteLine(_date);
-        Console.WriteLine(_response);
         Console.WriteLine(_prompt);
+        Console.WriteLine(_response);
+        Console.WriteLine();
     }
 }
