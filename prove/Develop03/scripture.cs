@@ -16,11 +16,6 @@ public class Scripture
         //assisted by ChatGPT
         _words = text.Split(' ').Select(word => new Word(word)).ToList();
     }
-    public int NumberOfHiddenWords()
-    {   
-        //assisted by chatGPT
-        return _words.Count(word => word.IsHidden());
-    }
     public void HideSomeWords()
     {
         Random random = new Random();
@@ -30,7 +25,7 @@ public class Scripture
         for (int i = 0; i < wordsToHide; i++)
         {
             int index = random.Next(_words.Count);
-            if (!_words[index].IsHidden())
+            if (_words[index].IsHidden() == false)
             {
                 _words[index].SetIsHidden(true);
             }

@@ -19,8 +19,7 @@ public class Word
     }
     public string GetWord()
     {
-        //assisted by ChatGPT
-        if (_hidden)
+        if (_hidden == true)
         {
             return new string('_', _word.Length);
         }
@@ -28,9 +27,5 @@ public class Word
         {
             return _word;
         }
-    }
-    public int GetWordLength()
-    {
-        return _word.Length;
     }
 }

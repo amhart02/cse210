@@ -9,14 +9,12 @@ public class Reference
     {
         _bookName = bookName;
         _chapter = chapter;
-        //assisted by ChatGPT
         _verse = new int[] {verse};
     }
     public Reference(string bookName, int chapter, int startVerse, int endVerse)
     {
         _bookName = bookName;
         _chapter = chapter;
-        //assisted by ChatGPT
         _verse = new int[] {startVerse, endVerse};
     }
     public string GetScriptureReferenceString() 
@@ -29,9 +27,5 @@ public class Reference
         {
             return $"{_bookName} {_chapter}:{_verse[0]}-{_verse[1]}";
         }
-    }
-    public void ShowScriptureReference()
-    {
-        Console.WriteLine(GetScriptureReferenceString());
     }
 }
