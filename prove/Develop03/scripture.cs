@@ -35,7 +35,7 @@ public class Scripture
             }
     }
     }
-        public bool AllWordsHidden()
+    public bool AllWordsHidden()
     {
         return _words.All(word => word.IsHidden());
     }
