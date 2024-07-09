@@ -7,6 +7,10 @@ class Doctor : Employee
     }
     public override double GetPay()
     {
-        return _salary/52;
+        return _salary / 52;
+    }
+    public override double InsuranceCost()
+    {
+        return _salary * 0.03;
     }
 }

@@ -7,8 +7,8 @@ class Program
     {
         Console.WriteLine("Bonjour Tout Le Monde.");
 
-        Employee employee = new Employee("Bob", 40, 23.77);
-        Console.WriteLine($"{employee.GetName()} is due: {employee.GetPay()}");
+        // Employee employee = new Employee("Bob", 40, 23.77);
+        // Console.WriteLine($"{employee.GetName()} is due: {employee.GetPay()}");
 
         ConstructionWorker constructionWorker = new ConstructionWorker("Betty", 40, 35.88);
         Console.WriteLine($"{constructionWorker.GetName()} is due: {constructionWorker.GetPay()}");
@@ -17,13 +17,13 @@ class Program
         Console.WriteLine($"{doctor.GetName()} is due: {doctor.GetPay()}");
 
         List<Employee> employees = new List<Employee>();
-        employees.Add(employee);
+        // employees.Add(employee);
         employees.Add(constructionWorker);
         employees.Add(doctor);
 
         foreach (Employee e in employees)
         {
-            Console.WriteLine($"{e.GetName()} is due: {e.GetPay()}");
+            Console.WriteLine($"{e.GetName()} is due: {e.GetPay()}: insurance cost {e.InsuranceCost()}");
         }
 
     }
