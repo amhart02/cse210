@@ -1,6 +1,6 @@
 class Menu
 {
-    public int DisplayMenu(int score)
+    public int DisplayMenu(int score, Goals goals)
     {
         int userInput = 0;
 
@@ -8,6 +8,7 @@ class Menu
         {
             Console.WriteLine();
             Console.WriteLine($"You have {score} points.");
+            Console.WriteLine($"You are on level {goals.GetLevel()}.");
             Console.WriteLine();
             Console.WriteLine("Menu options:");
             Console.WriteLine("1. Create New Goal");
@@ -24,14 +25,14 @@ class Menu
     }
     public int DisplayGoalMenu()
     {
-            Console.WriteLine();
-            Console.WriteLine("The types of goals are: ");
-            Console.WriteLine("1. Simple Goal");
-            Console.WriteLine("2. Eternal Goal");
-            Console.WriteLine("3. Checklist Goal");
-            Console.Write("Which type of goal would you like to create? ");
-            int userInput = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+        Console.WriteLine("The types of goals are: ");
+        Console.WriteLine("1. Simple Goal");
+        Console.WriteLine("2. Eternal Goal");
+        Console.WriteLine("3. Checklist Goal");
+        Console.Write("Which type of goal would you like to create? ");
+        int userInput = int.Parse(Console.ReadLine());
 
-            return userInput;
+        return userInput;
     }
 }

@@ -1,0 +1,4 @@
+0
+SimpleGoal,go to temple,do it,5,False
+EternalGoal,read scriptures,do it,1
+ChecklistGoal,go on a date,do it,5,False,3,3,0
