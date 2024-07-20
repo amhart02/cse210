@@ -14,6 +14,11 @@ class Cart
         _products.Add(product);
         _totalCost += product.GetPrice();
     }
+    public void DeleteProduct(Product product)
+    {
+        _products.Remove(product);
+        _totalCost -= product.GetPrice();
+    }
     public void DisplayCart()
     {
         int productNumber = 1;

@@ -40,7 +40,15 @@ class Program
             //remove item
             else if (userInput == 3)
             {
+                List<Product> loadedProducts = Products.ReadFromFile("products.txt");
+                products.LoadProducts(loadedProducts);
+                products.DisplayProducts();
 
+                Console.WriteLine("Which item would you like to add to the cart (please use the number value)? ");
+                int itemToDelete = int.Parse(Console.ReadLine());
+                Product productToDelete = loadedProducts[itemToDelete];
+                cart.DeleteProduct(productToDelete);
+                Console.WriteLine();
             }
             //view cart
             else if (userInput == 4)
