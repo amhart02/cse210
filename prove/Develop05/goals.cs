@@ -111,7 +111,6 @@ class Goals
             {
                 continue;
             }
-
             goals.Add(goal);
         }
         return goals;

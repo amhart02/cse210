@@ -11,12 +11,4 @@ class User
         _password = password;
         _userID = userID;
     }
-    public string GetName()
-    {
-        return _name;
-    }
-    public void DisplayUserInfo()
-    {
-        Console.WriteLine($"{_name}");
-    }
 }

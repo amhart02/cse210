@@ -1,5 +1,31 @@
+using System.Runtime.CompilerServices;
+
 class Cart
 {
     private List<Product> _products;
-    private double totalCost;
+    private double _totalCost;
+    public Cart(double totalCost)
+    {
+        _products = new List<Product>();
+        _totalCost = totalCost;
+    }
+    public void AddProduct(Product product)
+    {
+        _products.Add(product);
+        _totalCost += product.GetPrice();
+    }
+    public void DisplayCart()
+    {
+        int productNumber = 1;
+        Console.WriteLine("Your Cart: ");
+        Console.WriteLine();
+        foreach (Product product in _products)
+        {
+            product.DisplayProductCart(productNumber);
+            productNumber += 1;
+        }
+        Console.WriteLine();
+        Console.WriteLine($"Total Cost: ${_totalCost:F2}");
+        Console.WriteLine();
+    }
 }
