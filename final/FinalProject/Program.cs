@@ -41,13 +41,11 @@ class Program
             //remove item
             else if (userInput == 3)
             {
-                List<Product> loadedProducts = Products.ReadFromFile("products.txt");
-                products.LoadProducts(loadedProducts);
-                products.DisplayProducts();
+                cart.DisplayCart();
 
-                Console.WriteLine("Which item would you like to add to the cart (please use the number value)? ");
+                Console.WriteLine("Which item would you like remove from the cart (please use the number value)? ");
                 int itemToDelete = int.Parse(Console.ReadLine());
-                Product productToDelete = loadedProducts[itemToDelete - 1];
+                Product productToDelete = cart.GetListProducts()[itemToDelete - 1];
                 cart.DeleteProduct(productToDelete);
                 Console.WriteLine();
             }
@@ -62,12 +60,16 @@ class Program
             {
                 Order order = new Order(cart.GetListProducts(), cart.GetTotalCost(), DateTime.Now.ToString("yyyy-MM-dd"), user.GetUserID());
                 orders.AddOrder(order);
-                cart.GetListProducts().Clear();
+                cart.ClearCart();
+                Console.WriteLine();
+                Console.WriteLine("Your order has been placed!");
+                Console.WriteLine();
             }
             //view orders
             else if (userInput == 6)
             {
-
+                Console.WriteLine();
+                orders.DisplayOrders();
             }
         }
     }

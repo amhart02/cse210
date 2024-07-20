@@ -19,11 +19,13 @@ class Order
         Console.WriteLine($"Order ID: {_orderID}");
         Console.WriteLine($"Date Ordered: {_orderDate}");
         Console.WriteLine($"User ID: {_userID}");
-        Console.WriteLine($"Total Cost: {_totalCost}");
+        Console.WriteLine($"Total Cost: {_totalCost:F2}");
+        Console.WriteLine();
         Console.WriteLine("Products Ordered:");
         foreach (Product product in _products)
         {
             product.OrderDisplayProduct();
         }
+        Console.WriteLine();
     }
 }

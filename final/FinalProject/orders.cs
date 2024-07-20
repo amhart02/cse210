@@ -9,4 +9,11 @@ class Orders
     {
         _orders.Add(order);
     }
+    public void DisplayOrders()
+    {
+        foreach (Order order in _orders)
+        {
+            order.DisplayOrder();
+        }
+    }
 }

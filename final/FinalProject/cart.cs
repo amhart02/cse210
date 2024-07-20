@@ -23,11 +23,19 @@ class Cart
     {
         int productNumber = 1;
         Console.WriteLine("Your Cart: ");
-        Console.WriteLine();
-        foreach (Product product in _products)
+        if (_products.Count == 0)
         {
-            product.DisplayProductCart(productNumber);
-            productNumber += 1;
+            Console.WriteLine();
+            Console.WriteLine("Your cart is empty.");
+        }
+        else
+        {
+            Console.WriteLine();
+            foreach (Product product in _products)
+            {
+                product.DisplayProductCart(productNumber);
+                productNumber += 1;
+            }
         }
         Console.WriteLine();
         Console.WriteLine($"Total Cost: ${_totalCost:F2}");
@@ -35,10 +43,15 @@ class Cart
     }
     public List<Product> GetListProducts()
     {
-        return _products;
+        return new List<Product>(_products);
     }
     public double GetTotalCost()
     {
         return _totalCost;
+    }
+    public void ClearCart()
+    {
+        _products.Clear();
+        _totalCost = 0;
     }
 }
