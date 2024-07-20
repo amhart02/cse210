@@ -8,7 +8,6 @@ class Program
         int userInput = 1;
         Menu menu = new Menu();
         User user = menu.DisplayLogIn();
-        Console.Clear();
         Products products = new Products();
         Cart cart = new Cart(0);
         Orders orders = new Orders();
@@ -16,6 +15,8 @@ class Program
         //main while loop
         while (userInput != 7)
         {
+            Console.Clear();
+            Console.SetCursorPosition(0, 0);
             userInput = menu.DisplayMainMenu();
 
             //display products
@@ -24,6 +25,8 @@ class Program
                 List<Product> loadedProducts = Products.ReadFromFile("products.txt");
                 products.LoadProducts(loadedProducts);
                 products.DisplayProducts();
+                Console.WriteLine("Press any key to return to the main menu.");
+                Console.ReadKey();
             }
             //add item
             else if (userInput == 2)
@@ -54,6 +57,8 @@ class Program
             {
                 Console.WriteLine();
                 cart.DisplayCart();
+                Console.WriteLine("Press any key to return to the main menu.");
+                Console.ReadKey();
             }
             //create order
             else if (userInput == 5)
@@ -64,12 +69,16 @@ class Program
                 Console.WriteLine();
                 Console.WriteLine("Your order has been placed!");
                 Console.WriteLine();
+                Console.WriteLine("Press any key to return to the main menu.");
+                Console.ReadKey();
             }
             //view orders
             else if (userInput == 6)
             {
                 Console.WriteLine();
                 orders.DisplayOrders();
+                Console.WriteLine("Press any key to return to the main menu.");
+                Console.ReadKey();
             }
         }
     }
