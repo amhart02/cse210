@@ -66,8 +66,4 @@ class Products
     {
         _products = products;
     }
-    public List<Product> GetProductList()
-    {
-        return _products;
-    }
 }
