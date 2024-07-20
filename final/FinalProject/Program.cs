@@ -11,6 +11,7 @@ class Program
         Console.Clear();
         Products products = new Products();
         Cart cart = new Cart(0);
+        Orders orders = new Orders();
 
         //main while loop
         while (userInput != 7)
@@ -46,7 +47,7 @@ class Program
 
                 Console.WriteLine("Which item would you like to add to the cart (please use the number value)? ");
                 int itemToDelete = int.Parse(Console.ReadLine());
-                Product productToDelete = loadedProducts[itemToDelete];
+                Product productToDelete = loadedProducts[itemToDelete - 1];
                 cart.DeleteProduct(productToDelete);
                 Console.WriteLine();
             }
@@ -59,7 +60,9 @@ class Program
             //create order
             else if (userInput == 5)
             {
-
+                Order order = new Order(cart.GetListProducts(), cart.GetTotalCost(), DateTime.Now.ToString("yyyy-MM-dd"), user.GetUserID());
+                orders.AddOrder(order);
+                cart.GetListProducts().Clear();
             }
             //view orders
             else if (userInput == 6)

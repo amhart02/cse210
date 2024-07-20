@@ -33,4 +33,12 @@ class Cart
         Console.WriteLine($"Total Cost: ${_totalCost:F2}");
         Console.WriteLine();
     }
+    public List<Product> GetListProducts()
+    {
+        return _products;
+    }
+    public double GetTotalCost()
+    {
+        return _totalCost;
+    }
 }

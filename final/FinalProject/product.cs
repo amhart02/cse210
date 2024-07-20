@@ -33,4 +33,8 @@ class Product
     {
         return _name;
     }
+    public void OrderDisplayProduct()
+    {
+        Console.WriteLine($"{_name} - {_price}");
+    }
 }

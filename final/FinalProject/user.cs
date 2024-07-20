@@ -11,4 +11,8 @@ class User
         _password = password;
         _userID = userID;
     }
+    public int GetUserID()
+    {
+        return _userID;
+    }
 }
